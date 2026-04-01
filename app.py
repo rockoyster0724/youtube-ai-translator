@@ -62,9 +62,9 @@ if st.button("啟動雲端極速處理"):
                     'outtmpl': 'input_audio.m4a',
                     'overwrites': True,
                     'extractor_args': {'youtube': {'player_client': ['ios', 'android', 'web']}},
-                    'source_address': '0.0.0.0',
-                    'cookiefile': 'cookies.txt',
-                    'verbose': True
+                    'source_address': '0.0.0.0'
+                    #'cookiefile': 'cookies.txt',
+                    #'verbose': True
                 }
                 target_file = 'input_audio.m4a'
             else:
