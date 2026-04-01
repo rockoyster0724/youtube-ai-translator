@@ -31,11 +31,7 @@ def translate_sentence(text):
 st.title("🎥 YouTube 影片 AI 轉譯助手 (☁️ 雲端極速版)")
 
 # 側邊欄：設定 API Key
-with st.sidebar:
-    st.header("⚙️ 雲端引擎設定")
-    api_key = st.text_input("請輸入 Groq API Key (必填)：", type="password")
-    st.markdown("[👉 點我免費獲取 Groq API Key](https://console.groq.com/keys)")
-
+api_key = st.secrets["GROQ_API_KEY"]
 # 1. 輸入網址
 url = st.text_input("請貼上 YouTube 影片網址：", placeholder="https://www.youtube.com/watch?v=...")
 
