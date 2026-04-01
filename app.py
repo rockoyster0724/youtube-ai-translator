@@ -81,7 +81,11 @@ if st.button("啟動雲端極速處理"):
                 target_file = 'input_video.mp4'
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
+                    try:
+                        ydl.download([url])
+                    except Exception as e:
+                        st.error(f"🚨 抓到真兇了！真實錯誤原因： {str(e)}")
+                        st.stop()  # 發生錯誤就立刻停止
             
             # --- 為了讓 Groq 處理，我們統一抽出一份音檔 ---
             st.write("☁️ [2/4] 正在將語音送往 Groq 雲端處理 (只需幾秒鐘)...")
