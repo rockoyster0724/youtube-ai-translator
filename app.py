@@ -7,7 +7,11 @@ import subprocess
 import concurrent.futures
 from groq import Groq
 from deep_translator import GoogleTranslator
-
+st.set_page_config(
+    page_title="生蠔 YT 翻譯機",
+    page_icon="🦪",
+    layout="centered"
+)
 # --- 輔助函數：將秒數轉換為標準時間格式 ---
 def format_timestamp(seconds: float, separator=","):
     hours = int(seconds // 3600)
