@@ -9,7 +9,7 @@ from groq import Groq
 from deep_translator import GoogleTranslator
 st.set_page_config(
     page_title="生蠔YT翻譯機",
-    page_icon="Gemini_Generated_Image_dxmz5adxmz5adxmz",
+    page_icon="icon.png",
     layout="centered"
 )
 # --- 輔助函數：將秒數轉換為標準時間格式 ---
