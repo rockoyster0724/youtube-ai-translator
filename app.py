@@ -61,7 +61,8 @@ if st.button("啟動雲端極速處理"):
                     'outtmpl': 'input_audio.m4a',
                     'overwrites': True,
                     'extractor_args': {'youtube': {'player_client': ['android']}},
-                    'source_address': '0.0.0.0'}
+                    'source_address': '0.0.0.0',
+                    'cookiefile': 'cookies.txt'}
                 target_file = 'input_audio.m4a'
             else:
                 st.write("📥 [1/4] 正在下載 1080p 影片...")
@@ -69,7 +70,8 @@ if st.button("啟動雲端極速處理"):
                     'outtmpl': 'input_video.mp4',
                     'overwrites': True,
                     'extractor_args': {'youtube': {'player_client': ['android']}},
-                    'source_address': '0.0.0.0'}
+                    'source_address': '0.0.0.0',
+                    'cookiefile': 'cookies.txt'}
                 target_file = 'input_video.mp4'
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
