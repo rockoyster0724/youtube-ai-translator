@@ -57,11 +57,11 @@ if st.button("啟動雲端極速處理"):
             # --- 步驟 A: 下載 ---
             if "音檔" in mode:
                 st.write("📥 [1/4] 正在下載音訊...")
-                ydl_opts = {'format': 'm4a/bestaudio/best', 'outtmpl': 'input_audio.m4a', 'overwrites': True}
+                ydl_opts = {'format': 'm4a/bestaudio/best', 'outtmpl': 'input_audio.m4a', 'overwrites': True, 'extractor_args': {'youtube': {'player_client': ['web']}}}
                 target_file = 'input_audio.m4a'
             else:
                 st.write("📥 [1/4] 正在下載 1080p 影片...")
-                ydl_opts = {'format': 'bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]/best', 'outtmpl': 'input_video.mp4', 'overwrites': True}
+                ydl_opts = {'format': 'bestvideo[height<=1080][vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]/best', 'outtmpl': 'input_video.mp4', 'overwrites': True, 'extractor_args': {'youtube': {'player_client': ['web']}}}
                 target_file = 'input_video.mp4'
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
